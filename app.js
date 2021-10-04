@@ -3,6 +3,7 @@ const app = express()
 const morgan  = require('morgan')
 const productRoutes = require('./api/routes/products')
 const ordersRoutes = require('./api/routes/orders')
+const userRoutes = require('./api/routes/user')
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
@@ -29,5 +30,5 @@ app.use((req,res,next) => {
 
 app.use('/products',productRoutes)
 app.use('/orders',ordersRoutes)
-
+app.use('/user',userRoutes)
 module.exports = app
